@@ -1,4 +1,4 @@
-import type { Post } from "@/types/post";
+import type { Post } from "../types/post";
 
 const API_BASE_URL = "https://jsonplaceholder.typicode.com";
 
