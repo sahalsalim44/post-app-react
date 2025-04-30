@@ -34,30 +34,26 @@ export default function Header() {
             </div>
             <nav className="hidden sm:ml-6 sm:flex sm:space-x-8" aria-label="Main Navigation">
               <Link href="/">
-                {({ isActive }) => (
-                  <a
-                    className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                      isActive || location === "/"
-                        ? "border-primary-500 text-secondary-900"
-                        : "border-transparent text-secondary-500 hover:border-secondary-300 hover:text-secondary-700"
-                    }`}
-                  >
-                    Home
-                  </a>
-                )}
+                <span
+                  className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium cursor-pointer ${
+                    location === "/"
+                      ? "border-primary-500 text-secondary-900"
+                      : "border-transparent text-secondary-500 hover:border-secondary-300 hover:text-secondary-700"
+                  }`}
+                >
+                  Home
+                </span>
               </Link>
               <Link href="/new">
-                {({ isActive }) => (
-                  <a
-                    className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                      isActive || location.startsWith("/new") || location.startsWith("/edit")
-                        ? "border-primary-500 text-secondary-900"
-                        : "border-transparent text-secondary-500 hover:border-secondary-300 hover:text-secondary-700"
-                    }`}
-                  >
-                    New Post
-                  </a>
-                )}
+                <span
+                  className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium cursor-pointer ${
+                    location.startsWith("/new") || location.startsWith("/edit")
+                      ? "border-primary-500 text-secondary-900"
+                      : "border-transparent text-secondary-500 hover:border-secondary-300 hover:text-secondary-700"
+                  }`}
+                >
+                  New Post
+                </span>
               </Link>
             </nav>
           </div>

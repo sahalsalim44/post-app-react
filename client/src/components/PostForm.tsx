@@ -8,7 +8,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import type { PostFormData } from "@/types/post";
+import type { PostFormData } from "../types/post";
 
 const postSchema = z.object({
   title: z.string().min(3, { message: "Title must be at least 3 characters" }).max(100),

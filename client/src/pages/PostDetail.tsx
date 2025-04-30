@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRoute, useLocation } from "wouter";
-import { usePosts } from "@/hooks/usePosts";
+import { usePosts } from "../hooks/usePosts";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";

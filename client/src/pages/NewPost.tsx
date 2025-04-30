@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useRoute, useLocation } from "wouter";
-import { usePosts } from "@/hooks/usePosts";
+import { usePosts } from "../hooks/usePosts";
 import PostForm from "@/components/PostForm";
-import type { Post, PostFormData } from "@/types/post";
+import type { Post, PostFormData } from "../types/post";
 import { useToast } from "@/hooks/use-toast";
 
 export default function NewPost() {

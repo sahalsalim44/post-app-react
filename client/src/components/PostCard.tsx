@@ -2,7 +2,7 @@ import { useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Edit } from "lucide-react";
-import type { Post } from "@/types/post";
+import type { Post } from "../types/post";
 
 interface PostCardProps {
   post: Post;
