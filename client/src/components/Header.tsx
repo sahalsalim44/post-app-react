@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import { usePosts } from "@/hooks/usePosts";
+import { usePosts } from "../hooks/usePosts";
 
 export default function Header() {
   const [location] = useLocation();

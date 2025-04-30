@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
-import { usePosts } from "@/hooks/usePosts";
+import { usePosts } from "../hooks/usePosts";
 import PostCard from "@/components/PostCard";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
-import type { Post } from "@/types/post";
+import type { Post } from "../types/post";
 
 export default function Home() {
   const [, navigate] = useLocation();
-  const { posts, isLoading } = usePosts();
-  const [searchQuery, setSearchQuery] = useState("");
+  const { posts, isLoading, searchQuery } = usePosts();
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -26,10 +25,6 @@ export default function Home() {
       }
     }
   }, [posts, searchQuery]);
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

@@ -1,11 +1,11 @@
-import { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getPosts, getPostById } from "@/lib/api";
-import { queryClient } from "@/lib/queryClient";
-import type { Post, PostFormData } from "@/types/post";
+import { getPosts, getPostById } from "../lib/api";
+import { queryClient } from "../lib/queryClient";
+import type { Post, PostFormData } from "../types/post";
 
 interface PostsContextType {
-  posts: Post[] | undefined;
+  posts: Post[];
   isLoading: boolean;
   error: Error | null;
   searchQuery: string;
@@ -30,7 +30,7 @@ export function PostsProvider({ children }: { children: React.ReactNode }) {
   // Combine API posts with local posts
   const posts = apiPosts
     ? [...localPosts, ...apiPosts].sort((a, b) => b.id - a.id)
-    : undefined;
+    : [];
 
   // Function to add a new post
   const addPost = (postData: PostFormData) => {
@@ -89,10 +89,10 @@ export function PostsProvider({ children }: { children: React.ReactNode }) {
     fetchPostById,
   };
 
-  return (
-    <PostsContext.Provider value={value}>
-      {children}
-    </PostsContext.Provider>
+  return React.createElement(
+    PostsContext.Provider,
+    { value },
+    children
   );
 }
 
