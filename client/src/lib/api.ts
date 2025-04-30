@@ -45,9 +45,8 @@ export async function getPostById(id: number): Promise<Post> {
   }
 }
 
-// Note: In a real application, these functions would actually send POST/PUT
-// requests to a backend server. For this example, we're just simulating the API calls
-// since JSONPlaceholder doesn't actually persist changes.
+// These functions handle the communication with the JSONPlaceholder API
+// Local changes are stored in memory through the PostsProvider
 
 export async function createPost(postData: Omit<Post, "id">): Promise<Post> {
   try {
